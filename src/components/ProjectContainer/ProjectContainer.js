@@ -42,15 +42,11 @@ const ProjectContainer = ({ project }) => (
 )
 
 const Wrapper = styled.div`
+  max-width:500px;
   padding: 2em;
-  margin: 0 auto;
+  margin: 0.5em;
   text-align: center;
   box-shadow: var(--shadow);
-  transition: transform 0.2s linear;
-
-  &:hover {
-    transform: translateY(-7px);
-}
 
   h3{
     color:var(--clr-primary);

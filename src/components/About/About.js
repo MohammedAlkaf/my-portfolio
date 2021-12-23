@@ -135,6 +135,7 @@ const Role = styled.h2`
 `;
 
 const Desc = styled.p`
+    margin-top:1em;
     font-size: 1.3em;
     max-width: 600px;
     text-align: justify;

@@ -32,11 +32,11 @@ return (
     <NavWrapper className='center'>
         <List>
 
-            {/* <ListItem>
+            <ListItem>
                 <NavigationLink onClick={() => excuteScroll('about')}>
                 About
                 </NavigationLink>
-            </ListItem> */}
+            </ListItem>
 
             {projects.length ? (
             <ListItem>

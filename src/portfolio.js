@@ -1,4 +1,3 @@
-import CarDodgeGame from './assests/CarDodgeGame.png';
 
 const header = {
     // all the properties are optional - can be left empty or deleted
@@ -25,7 +24,7 @@ const header = {
     // if there are no projects, Projects section won't show up
     {
       name: 'Car Dodge Game',
-      photo:CarDodgeGame,
+      photo:'https://i.ibb.co/pPZZqmg/Car-Dodge-Game.png',
       description:
         `This game is called Car Dodge. It's buit using Object Oriented Programming. In the game, you play as a car driver. The only thing you can do is move left or right with the arrows of your keyboard and dodge cars`,
       stack: ['JavaScript', 'CSS', 'HTML'],
@@ -33,18 +32,20 @@ const header = {
       livePreview: 'https://car-dodge-game.netlify.app/',
     },
     {
-      name: 'Project 2',
+      name: 'Critter',
+      photo:'https://i.ibb.co/rbn8NRC/Twitter-Clone-Project.png',
       description:
-        'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-      stack: ['SASS', 'TypeScript', 'React'],
+        "Critter is a full-stack web app. It's simillar to twitter. The user can post a new tweet, like and retweet any tweet in the home feed",
+      stack: ['React', 'JavaScript', 'NodeJs', 'CSS'],
       sourceCode: 'https://github.com',
       livePreview: 'https://github.com',
     },
     {
-      name: 'Project 3',
+      name: 'SlingAir',
+      photo:'https://i.ibb.co/ZBNRbVX/Sling-Air-Project.png',
       description:
-        'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-      stack: ['SASS', 'TypeScript', 'React'],
+        'SlingAir is full-stack flight booking app. It allows current user to make a flight reservation, modify and, retrieve an existing reservation',
+      stack: ['React', 'JavaScript', 'NodeJS', 'MongoDB', 'ExpressJS', "CSS"],
       sourceCode: 'https://github.com',
       livePreview: 'https://github.com',
     },
