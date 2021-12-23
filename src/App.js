@@ -37,11 +37,12 @@ const App = () => {
 }
 
 const Main = styled.main`
-  max-width: 1100px;
+  max-width: 100vw;
   width: 95%;
   margin: 0 auto;
   overflow: auto;
   height: calc( 100vh - 4em);
+  
 ::-webkit-scrollbar {
   width: 2px;
   height: 2px;

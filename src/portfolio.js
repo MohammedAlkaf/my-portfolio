@@ -1,3 +1,5 @@
+import CarDodgeGame from './assests/CarDodgeGame.png';
+
 const header = {
     // all the properties are optional - can be left empty or deleted
     homepage: 'https://github.com/MohammedAlkaf',
@@ -9,24 +11,26 @@ const header = {
     name: 'Mohammed Al-Kaf',
     role: 'Full Stack Developer',
     description:
-      'Adipisicing sit fugit ullam unde aliquid sequi Facilis soluta facilis perspiciatis corporis nulla aspernatur. Autem eligendi rerum delectus modi quisquam? Illo ut quasi nemo ipsa cumque perspiciatis! Maiores minima consectetur.',
+      "I’ve always sought out new opportunities and challenges that are meaningful to me. I am an electrical engineer and I started my coding journey using C++ as my first programming language. I found my passion in coding where creative ideas come into life.  As a web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at a high growth company.",
     resume: 'https://example.com',
     social: {
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
     },
+    photo:"https://i.ibb.co/HNJnJNS/CBE19-C54-E33-E-486-D-BC2-F-3-D38-B5-CAA849.jpg"
   }
   
   const projects = [
     // projects can be added an removed
     // if there are no projects, Projects section won't show up
     {
-      name: 'Project 1',
+      name: 'Car Dodge Game',
+      photo:CarDodgeGame,
       description:
-        'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-      stack: ['SASS', 'TypeScript', 'React'],
+        `This game is called Car Dodge. It's buit using Object Oriented Programming. In the game, you play as a car driver. The only thing you can do is move left or right with the arrows of your keyboard and dodge cars`,
+      stack: ['JavaScript', 'CSS', 'HTML'],
       sourceCode: 'https://github.com',
-      livePreview: 'https://github.com',
+      livePreview: 'https://car-dodge-game.netlify.app/',
     },
     {
       name: 'Project 2',

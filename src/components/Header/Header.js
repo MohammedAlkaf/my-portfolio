@@ -31,8 +31,6 @@ const Wrapper = styled.header`
     width: 95%;
     margin: 0 auto;
     justify-content: space-between;
-  }
-  
   @media (max-width: 600px) {
     height: 6em;
   }

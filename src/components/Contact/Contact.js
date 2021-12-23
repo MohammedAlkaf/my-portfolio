@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 5em;
+  margin: 5em 0;
 `;
 
 const Email = styled.a`

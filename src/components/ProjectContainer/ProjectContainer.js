@@ -8,6 +8,7 @@ import { Link } from '../../styles/ReusableStyles'
 const ProjectContainer = ({ project }) => (
   <Wrapper>
     <h3>{project.name}</h3>
+    <ProjectImg src = {project.photo}/>
 
     <Descripition>{project.description}</Descripition>
     {project.stack && (
@@ -50,6 +51,20 @@ const Wrapper = styled.div`
   &:hover {
     transform: translateY(-7px);
 }
+
+  h3{
+    color:var(--clr-primary);
+  }
+  @media (max-width: 800px) {
+      width:90%;
+    }
+`;
+
+const ProjectImg = styled.img`
+  margin-top:1em;
+  width:95%;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
 `;
 
 const Descripition = styled.p`
