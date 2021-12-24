@@ -1,8 +1,6 @@
 import React,{useState} from "react";
 import uniqid from 'uniqid';
 import styled from 'styled-components';
-import ArrowBackTwoToneIcon from '@material-ui/icons/ArrowBackTwoTone';
-import ArrowForwardTwoToneIcon from '@material-ui/icons/ArrowForwardTwoTone';
 import ArrowBackIosTwoToneIcon from '@material-ui/icons/ArrowBackIosTwoTone';
 import ArrowForwardIosTwoToneIcon from '@material-ui/icons/ArrowForwardIosTwoTone';
 const SlideShow = ({ slideImages }) => {
@@ -21,18 +19,16 @@ const SlideShow = ({ slideImages }) => {
     return (
         <Wrapper>
             <Slider>
-                {/* <ArrowsContainer> */}
-                    <LeftArrow onClick={() => previuosSlide()}>
-                        <ArrowBackIosTwoToneIcon/>
-                    </LeftArrow>
-                    <RightArrow onClick={() => nextSlide()}>
-                        <ArrowForwardIosTwoToneIcon/>
-                    </RightArrow>
-                {/* </ArrowsContainer> */}
+                <LeftArrow onClick={() => previuosSlide()}>
+                    <ArrowBackIosTwoToneIcon/>
+                </LeftArrow>
+                <RightArrow onClick={() => nextSlide()}>
+                    <ArrowForwardIosTwoToneIcon/>
+                </RightArrow>
                 {
                     slideImages.map((slide, index) => {
                         return(
-                            <ImgContainer style = { index === current ? activeStyle: {}} >
+                            <ImgContainer style = { index === current ? activeStyle: {}} key={uniqid()} >
                                 {
                                     index === current && <Img src = { slide } alt = "project image"  key={uniqid()}/>
                                 }
@@ -111,12 +107,6 @@ const RightArrow = styled.div`
     &:hover {
         opacity:1;
     }
-`;
-
-const ArrowsContainer = styled.div`
-display: flex;
-position:absolute;
-bottom:10px;
 `;
 
 const ImgContainer = styled.div`
