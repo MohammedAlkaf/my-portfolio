@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import Brightness2Icon from '@material-ui/icons/Brightness2'
 import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
 import { Link } from '../../styles/ReusableStyles'
@@ -26,6 +26,8 @@ const excuteScroll = (section) => {
         case 'contact':
             contactRef.current.scrollIntoView({ behavior: 'smooth' });
             break;
+        default:
+            window.alert("Unknown Page chosen")
     }
 }
 return (
@@ -77,6 +79,10 @@ return (
 const NavWrapper = styled.nav`
     display: flex;
     align-items: center;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
 `;
 
 const List = styled.ul`

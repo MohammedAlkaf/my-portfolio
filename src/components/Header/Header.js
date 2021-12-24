@@ -26,13 +26,13 @@ const Header = ({aboutRef, projectsRef, skillsRef, contactRef}) => {
 const Wrapper = styled.header`
     display: flex;
     align-items: center;
-    height: 4em;
+    height: 3em;
     max-width: 1100px;
     width: 95%;
     margin: 0 auto;
     justify-content: space-between;
-  @media (max-width: 600px) {
-    height: 6em;
+  @media (max-width: 800px) {
+    height: 2em;
   }
 `;
 

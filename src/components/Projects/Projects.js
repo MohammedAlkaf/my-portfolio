@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import { useAnimation, motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+
 import uniqid from 'uniqid'
 import styled from 'styled-components'
 import { projects } from '../../portfolio'
@@ -8,14 +7,7 @@ import ProjectContainer from '../ProjectContainer/ProjectContainer'
 // import './Projects.css'
 
 const Projects = ({ projectsRef }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
 
   if (!projects.length) return null
 
@@ -26,11 +18,6 @@ const Projects = ({ projectsRef }) => {
       <Title>Projects</Title>
 
       <Container
-        ref={ref}
-        as={motion.div}
-        animate={controls}
-        initial="hidden"
-        variants={squareVariants}
       >
         {projects.map((project) => (
           <ProjectContainer key={uniqid()} project={project} />
@@ -40,10 +27,7 @@ const Projects = ({ projectsRef }) => {
   )
 }
 
-const squareVariants = {
-  visible: { opacity: 1, y:0 , transition: { duration: 1.5 } },
-  hidden: {  opacity: 0,  y:-50 }
-};
+
 
 const Wrapper = styled.div`
     margin-top: 5em;
@@ -75,15 +59,15 @@ const Title = styled.h2`
 // `;
 
 const Container = styled.div`
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
     align-content: center;
-    @media (max-width: 800px) {
+    @media (max-width: 1100px) {
       height:auto;
+      flex-direction:column;
     }
 `;
 

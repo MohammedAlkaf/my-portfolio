@@ -20,7 +20,7 @@ const App = () => {
   const contactRef = useRef();
 
   return (
-    <div id='top' className={`${themeName} app`}>
+    <Wrapper id='top' className={`${themeName}`}>
       <GlobalStyles/>
       <Header aboutRef = {aboutRef}  projectsRef = {projectsRef} skillsRef = {skillsRef} contactRef = {contactRef}/>
 
@@ -32,16 +32,27 @@ const App = () => {
       </Main>
 
       <ScrollToTop />
-    </div>
+    </Wrapper>
   )
 }
+const Wrapper = styled.div`
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  color: var(--clr-fg);
+  background: var(--clr-bg);
+  transition: background 0.5s ease;
+`;
 
 const Main = styled.main`
   max-width: 100vw;
   width: 95%;
   margin: 0 auto;
   overflow: auto;
-  height: calc( 100vh - 4em);
+  height: calc( 100vh - 3em);
+
+  @media (max-width: 800px) {
+    height: calc( 100vh - 2em);
+  }
   
 ::-webkit-scrollbar {
   width: 2px;

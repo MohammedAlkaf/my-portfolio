@@ -1,66 +1,85 @@
 import uniqid from 'uniqid'
+import React, { useEffect } from "react";
 import styled from 'styled-components'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LaunchIcon from '@material-ui/icons/Launch'
-// import './ProjectContainer.css'
+import SlideShow from './SlideShow'
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { Link } from '../../styles/ReusableStyles'
 
-const ProjectContainer = ({ project }) => (
-  <Wrapper>
-    <h3>{project.name}</h3>
-    <ProjectImg src = {project.photo}/>
+const ProjectContainer = ({ project }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
 
-    <Descripition>{project.description}</Descripition>
-    {project.stack && (
-      <Stack>
-        {project.stack.map((item) => (
-          <StackItem key={uniqid()}>
-            {item}
-          </StackItem>
-        ))}
-      </Stack>
-    )}
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
 
-    {project.sourceCode && (
-      <GitHubLink
-        href={project.sourceCode}
-        aria-label='source code'
-      >
-        <GitHubIcon />
-      </GitHubLink>
-    )}
+  return(
+    <Wrapper
+    ref={ref}
+    as={motion.div}
+    animate={controls}
+    initial="hidden"
+    variants={squareVariants}
+    >
+      <h3>{project.name}</h3>
+      {/* <ProjectImg src = {project.photo}/> */}
+      <SlideShow slideImages = { project.photo }/>
 
-    {project.livePreview && (
-      <ProjectLink
-        href={project.livePreview}
-        aria-label='live preview'
-      >
-        <LaunchIcon />
-      </ProjectLink>
-    )}
-  </Wrapper>
-)
+      <Descripition>{project.description}</Descripition>
+      {project.stack && (
+        <Stack>
+          {project.stack.map((item) => (
+            <StackItem key={uniqid()}>
+              {item}
+            </StackItem>
+          ))}
+        </Stack>
+      )}
+
+      {project.sourceCode && (
+        <GitHubLink
+          href={project.sourceCode}
+          aria-label='source code'
+        >
+          <GitHubIcon />
+        </GitHubLink>
+      )}
+
+      {project.livePreview && (
+        <ProjectLink
+          href={project.livePreview}
+          aria-label='live preview'
+        >
+          <LaunchIcon />
+        </ProjectLink>
+      )}
+    </Wrapper>
+  )
+}
+
+const squareVariants = {
+  visible: { opacity: 1, y:0 , transition: { duration: 2 } },
+  hidden: {  opacity: 0,  y:-50 }
+};
 
 const Wrapper = styled.div`
   max-width:500px;
   padding: 2em;
-  margin: 0.5em;
+  margin: 2em 0.5em;
   text-align: center;
   box-shadow: var(--shadow);
-
+  
   h3{
     color:var(--clr-primary);
   }
   @media (max-width: 800px) {
       width:90%;
     }
-`;
-
-const ProjectImg = styled.img`
-  margin-top:1em;
-  width:95%;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-
 `;
 
 const Descripition = styled.p`

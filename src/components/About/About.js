@@ -38,6 +38,7 @@ return (
                 <LinkIcon
                     href={social.github}
                     aria-label='github'
+                    target="_blank"
                 >
                     <GitHubIcon />
                 </LinkIcon>
@@ -46,6 +47,7 @@ return (
                 {social.linkedin && (
                 <LinkIcon
                     href={social.linkedin}
+                    target="_blank"
                     aria-label='linkedin'
                 >
                     <LinkedInIcon />
