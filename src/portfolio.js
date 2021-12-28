@@ -11,7 +11,7 @@ const header = {
     role: 'Junior Full Stack Developer',
     description:
       "I’ve always sought out new opportunities and challenges that are meaningful to me. I am an electrical engineer and I started my coding journey using C++ as my first programming language. I found my passion in coding where creative ideas come into life.  As a web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at a high growth company.",
-    resume: 'https://documentcloud.adobe.com/link/track?uri=urn:aaid:scds:US:faf47488-4c65-4945-9332-929551c9defc',
+    resume: 'https://documentcloud.adobe.com/link/track?uri=urn:aaid:scds:US:ef860706-0de9-4d1e-a49f-480563a6a41f',
     social: {
       linkedin: 'https://www.linkedin.com/in/mohammed-al-kaf/',
       github: 'https://github.com/MohammedAlkaf',
@@ -54,27 +54,27 @@ const header = {
       sourceCode: 'https://github.com/MohammedAlkaf',
       livePreview: 'https://github.com/MohammedAlkaf',
     },
-    {
-      name: 'SlingAir',
-      photo:[
-        'https://i.ibb.co/pdxYg4J/Sling-Air2.gif',
-        'https://i.ibb.co/JmmPYkq/Sling-Air1.png',
-        'https://i.ibb.co/nD5gFgH/Sling-Air3.png'],
-      description:
-        'SlingAir is full-stack flight booking app. It allows current user to make a flight reservation, modify and, retrieve an existing reservation',
-      stack: ['React', 'JavaScript', 'NodeJS', "MongoDB", "ExpressJS", "Styled-components"],
-      sourceCode: 'https://github.com/MohammedAlkaf',
-      livePreview: 'https://github.com/MohammedAlkaf',
-    },
-    {
-      name: 'Fruit Emporium',
-      photo:['https://i.ibb.co/8dp9yP3/Eco-System1.png','https://i.ibb.co/1RRnBvS/Eco-System2.png','https://i.ibb.co/bJ71fW6/Eco-System3.png'],
-      description:
-        'Fruit Emporium is a simple modern food store. The customer can check different types of fruits available in the store and read more info about it and check its price and availability',
-      stack: ['React', 'JavaScript', "CSS", "Styled-components"],
-      sourceCode: 'https://github.com/MohammedAlkaf',
-      livePreview: 'https://github.com/MohammedAlkaf',
-    },
+    // {
+    //   name: 'SlingAir',
+    //   photo:[
+    //     'https://i.ibb.co/pdxYg4J/Sling-Air2.gif',
+    //     'https://i.ibb.co/JmmPYkq/Sling-Air1.png',
+    //     'https://i.ibb.co/nD5gFgH/Sling-Air3.png'],
+    //   description:
+    //     'SlingAir is full-stack flight booking app. It allows current user to make a flight reservation, modify and, retrieve an existing reservation',
+    //   stack: ['React', 'JavaScript', 'NodeJS', "MongoDB", "ExpressJS", "Styled-components"],
+    //   sourceCode: 'https://github.com/MohammedAlkaf',
+    //   livePreview: 'https://github.com/MohammedAlkaf',
+    // },
+    // {
+    //   name: 'Fruit Emporium',
+    //   photo:['https://i.ibb.co/8dp9yP3/Eco-System1.png','https://i.ibb.co/1RRnBvS/Eco-System2.png','https://i.ibb.co/bJ71fW6/Eco-System3.png'],
+    //   description:
+    //     'Fruit Emporium is a simple modern food store. The customer can check different types of fruits available in the store and read more info about it and check its price and availability',
+    //   stack: ['React', 'JavaScript', "CSS", "Styled-components"],
+    //   sourceCode: 'https://github.com/MohammedAlkaf',
+    //   livePreview: 'https://github.com/MohammedAlkaf',
+    // },
     {
       name: 'Car Dodge Game',
       photo:[
