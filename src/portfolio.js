@@ -16,7 +16,7 @@ const header = {
       linkedin: 'https://www.linkedin.com/in/mohammed-al-kaf/',
       github: 'https://github.com/MohammedAlkaf',
     },
-    photo:"https://i.ibb.co/HNJnJNS/CBE19-C54-E33-E-486-D-BC2-F-3-D38-B5-CAA849.jpg"
+    photo:"https://i.ibb.co/dfq91KC/IMG-3163-2.jpg"
   }
   
   const projects = [
