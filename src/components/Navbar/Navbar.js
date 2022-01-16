@@ -97,11 +97,12 @@ const ListItem = styled.li`
 
 const NavigationLink = styled.div`
     color: var(--clr-fg);
-    text-transform: lowercase;
     font-weight: 500;
     ${Link}
 `;
 
-const ThemeToggleButton = styled.div``;
+const ThemeToggleButton = styled.div`
+cursor: pointer;
+`;
 
 export default Navbar

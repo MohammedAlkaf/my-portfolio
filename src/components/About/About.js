@@ -74,7 +74,6 @@ const ImgslideIn = keyframes`
             transform: translateZ(0) translateX(0);
     opacity: 1;
   }
-}
 `;
 
 const AboutSlideIn = keyframes`
@@ -116,7 +115,7 @@ const Wrapper = styled.div`
 
 const Img = styled.img`
 margin: 2em;
-width: 23em;
+width: 27em;
 box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 animation: ${ImgslideIn} 1s ease-in-out both;
 
