@@ -21,7 +21,7 @@ return (
         )}
 
         {role && <Role>A {role}.</Role>}
-        <Desc>{description && description}</Desc>
+        <Desc>{description && description.split('\n').map(str => <p><br/>{str}</p>) }</Desc>
 
         <AboutContact className='about__contact center'>
             {resume && (
@@ -135,7 +135,7 @@ const Role = styled.h2`
     margin-top: 1.2em;
 `;
 
-const Desc = styled.p`
+const Desc = styled.div`
     margin-top:1em;
     font-size: 1.3em;
     max-width: 600px;
