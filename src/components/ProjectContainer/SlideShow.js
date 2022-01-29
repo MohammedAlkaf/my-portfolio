@@ -58,8 +58,11 @@ const Slider = styled.div`
 
 const Img = styled.img`
   width: 100%;
+  height: auto;
+  display: block;
   border-radius: 7px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-sizing: border-box;
 `;
 
 // left-arrow

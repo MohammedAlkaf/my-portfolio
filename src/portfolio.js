@@ -2,7 +2,7 @@
 const header = {
     // all the properties are optional - can be left empty or deleted
     homepage: 'https://github.com/MohammedAlkaf',
-    title: 'MA.',
+    title: 'Mohammed Al-Kaf',
   }
   
   const about = {

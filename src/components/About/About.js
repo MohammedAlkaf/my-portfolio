@@ -1,5 +1,6 @@
 import React from 'react';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import uniqid from 'uniqid'
 import styled from "styled-components";
 import { keyframes } from 'styled-components'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -21,7 +22,7 @@ return (
         )}
 
         {role && <Role>A {role}.</Role>}
-        <Desc>{description && description.split('\n').map(str => <p><br/>{str}</p>) }</Desc>
+        <Desc>{description && description.split('\n').map(str => <p key={uniqid()} ><br/>{str}</p>) }</Desc>
 
         <AboutContact className='about__contact center'>
             {resume && (
@@ -107,7 +108,7 @@ const Wrapper = styled.div`
     justify-content:center;
     height:100%;
     justify-content:center;
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
         flex-direction:column-reverse;
         height:auto;
     }
@@ -119,8 +120,8 @@ width: 27em;
 box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 animation: ${ImgslideIn} 1s ease-in-out both;
 
-@media (max-width: 800px) {
-    width: 15em;
+@media (max-width: 1000px) {
+    width: 80%;
     }
 `;
 

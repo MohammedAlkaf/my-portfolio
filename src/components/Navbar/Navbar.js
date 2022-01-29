@@ -1,15 +1,14 @@
 import React from 'react';
-import { useContext } from 'react'
+import { useContext} from 'react'
 import Brightness2Icon from '@material-ui/icons/Brightness2'
 import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
 import { Link } from '../../styles/ReusableStyles'
 import styled from 'styled-components'
 import { ThemeContext } from '../../contexts/theme'
 import { projects, skills, contact } from '../../portfolio'
-// import './Navbar.css'
 
-const Navbar = ({aboutRef, projectsRef, skillsRef, contactRef}) => {
-const [{ themeName, toggleTheme }] = useContext(ThemeContext)
+const Navbar = ({aboutRef, projectsRef, skillsRef, contactRef, isMenuShown, setIsMenuShown}) => {
+const [{ themeName, toggleTheme }] = useContext(ThemeContext);
 
 const excuteScroll = (section) => {
 
@@ -29,11 +28,11 @@ const excuteScroll = (section) => {
         default:
             window.alert("Unknown Page chosen")
     }
+    setIsMenuShown(!isMenuShown);
 }
 return (
-    <NavWrapper className='center'>
+    <NavWrapper className='center' isDisplayed = { isMenuShown }>
         <List>
-
             <ListItem>
                 <NavigationLink onClick={() => excuteScroll('about')}>
                 About
@@ -63,25 +62,39 @@ return (
                 </NavigationLink>
             </ListItem>
             ) : null}
+            <ThemeToggleButton
+                onClick={() => {
+                    toggleTheme();
+                    setIsMenuShown(!isMenuShown);
+                }}
+                aria-label='toggle theme'
+            >
+                {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
+            </ThemeToggleButton>
         </List>
-
-        <ThemeToggleButton
-            onClick={toggleTheme}
-            className='btn btn--icon nav__theme'
-            aria-label='toggle theme'
-        >
-            {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
-        </ThemeToggleButton>
     </NavWrapper>
 )
 }
 
 const NavWrapper = styled.nav`
+    position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s, height 0.5s;
 
-    @media (max-width: 800px) {
-      display: none;
+    @media (max-width: 620px) {
+        backdrop-filter: blur(10px);
+        background-color: var(--menu-bg); 
+        padding:1em 0em;
+        position: absolute;
+        right:0;
+        top:3em;
+        width:100%;
+        z-index: 10;
+        height: 175px;
+        overflow: hidden;
+        ${({ isDisplayed }) => isDisplayed && `height:0; opacity:0;`}
     }
 `;
 
@@ -89,6 +102,10 @@ const List = styled.ul`
     margin-right: 1.5em;
     list-style-type: none;
     display: flex;
+
+    @media (max-width: 620px) {
+      flex-direction: column;
+    }
 `;
 
 const ListItem = styled.li`
@@ -99,9 +116,14 @@ const NavigationLink = styled.div`
     color: var(--clr-fg);
     font-weight: 500;
     ${Link}
+    cursor: pointer;
 `;
 
 const ThemeToggleButton = styled.div`
+margin-left: 1em;
+display: flex;
+align-items: center;
+justify-content: center;
 cursor: pointer;
 `;
 

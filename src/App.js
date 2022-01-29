@@ -9,6 +9,11 @@ import Skills from './components/Skills/Skills'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Contact from './components/Contact/Contact'
 import GlobalStyles from "./styles/GlobalStyles";
+import Dark_bg_image from "./assests/Dark_bg_image.svg";
+import Light_bg_image from "./assests/Light_bg_image.svg";
+import Dark_bg_image_vertical from "./assests/Dark_bg_image_vertical.svg"
+import Light_bg_image_vertical from "./assests/Light_bg_image_vertical.svg"
+
 import './App.css'
 
 const App = () => {
@@ -20,7 +25,7 @@ const App = () => {
   const contactRef = useRef();
 
   return (
-    <Wrapper id='top' className={`${themeName}`}>
+    <Wrapper id='top' className={`${themeName}`} isThemDark = { themeName === 'dark' } >
       <GlobalStyles/>
       <Header aboutRef = {aboutRef}  projectsRef = {projectsRef} skillsRef = {skillsRef} contactRef = {contactRef}/>
 
@@ -41,6 +46,16 @@ const Wrapper = styled.div`
   color: var(--clr-fg);
   background: var(--clr-bg);
   transition: background 0.5s ease;
+  /* background-image: url(${Dark_bg_image}); */
+  ${({ isThemDark }) => isThemDark ? `background-image: url(${Dark_bg_image});` : `background-image: url(${Light_bg_image});`}
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-attachment: scroll;
+
+  @media (max-width: 620px) {
+    ${({ isThemDark }) => isThemDark ? `background-image: url(${Dark_bg_image_vertical});` : `background-image: url(${Light_bg_image_vertical});`}
+  }
 `;
 
 const Main = styled.main`
@@ -50,9 +65,9 @@ const Main = styled.main`
   overflow: auto;
   height: calc( 100vh - 3em);
 
-  @media (max-width: 800px) {
+  /* @media (max-width: 800px) {
     height: calc( 100vh - 2em);
-  }
+  } */
   
 ::-webkit-scrollbar {
   width: 2px;

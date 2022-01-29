@@ -72,6 +72,8 @@ const Wrapper = styled.div`
   padding: 2em;
   margin: 2em 0.5em;
   text-align: center;
+  backdrop-filter: blur(10px);
+  background-color: var(--blurry-bg); 
   box-shadow: var(--shadow);
   
   h3{
