@@ -24,16 +24,13 @@ const SlideShow = ({ slideImages }) => {
                 <RightArrow onClick={() => nextSlide()}>
                     <ArrowForwardIosTwoToneIcon />
                 </RightArrow>
-                {slideImages.map((slide, index) => {
-                    return (
-                        // Note: adding key={uniqid()} results in styles not being applied (animation not applied)
-                        <ImgContainer activeSlide={index === current}>
-                            {index === current && (
-                                <Img src={slide} alt="project image" key={uniqid()} />
-                            )}
-                        </ImgContainer>
-                    );
-                })}
+                <ImgContainer current = {current}>
+                  {slideImages.map((slide, index) => {
+                      return (
+                        <Img src={slide} alt="project image" key={uniqid()} />
+                      );
+                  })}
+                </ImgContainer>
             </Slider>
         </Wrapper>
     );
@@ -44,9 +41,6 @@ const Wrapper = styled.div`
   margin-top: 1em;
   width: 100%;
   transition: transform 1s ease;
-  &:hover {
-    transform: scale(1.1);
-  }
 `;
 
 const Slider = styled.div`
@@ -54,13 +48,14 @@ const Slider = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
+  overflow: hidden;
+  border-radius: 7px;
 `;
 
 const Img = styled.img`
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 7px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   box-sizing: border-box;
 `;
@@ -112,8 +107,8 @@ const RightArrow = styled.div`
 `;
 
 const ImgContainer = styled.div`
-  display: inline;
-  opacity: ${(props) => (props.activeSlide ? "1" : "0")};
-  transition: opacity 0.5s ease;
+  display: flex;
+  transition: all 0.5s ease;
+  transform: translateX(${props => props.current * -100}%);
 `;
 export default SlideShow;

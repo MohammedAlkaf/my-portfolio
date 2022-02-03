@@ -6,61 +6,64 @@ import { keyframes } from 'styled-components'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { about } from '../../portfolio';
 import { BtnOutline, Link } from '../../styles/ReusableStyles';
-// import './About.css';
+import Atropos from 'atropos/react';
+import "atropos/atropos.css";
+
 
 const About = ({aboutRef}) => {
-const { name, role, description, resume, social, photo } = about
+    const { name, role, description, resume, social, photo } = about;
 
-return (
-    <Wrapper ref = {aboutRef}>
-
-        <Container >
-        {name && (
-            <Name>
-            Hi, I am <span>{name}.</span>
-            </Name>
-        )}
-
-        {role && <Role>A {role}.</Role>}
-        <Desc>{description && description.split('\n').map(str => <p key={uniqid()} ><br/>{str}</p>) }</Desc>
-
-        <AboutContact className='about__contact center'>
-            {resume && (
-            <Resume href={resume} target="_blank">
-                <ResumeLink>
-                    Resume
-                </ResumeLink>
-            </Resume>
-            )}
-
-            {social && (
-            <>
-                {social.github && (
-                <LinkIcon
-                    href={social.github}
-                    aria-label='github'
-                    target="_blank"
-                >
-                    <GitHubIcon />
-                </LinkIcon>
+    return (
+        <Wrapper ref = {aboutRef}>
+            <Container >
+                {name && (
+                    <Name>
+                    Hi, I am <span>{name}.</span>
+                    </Name>
                 )}
 
-                {social.linkedin && (
-                <LinkIcon
-                    href={social.linkedin}
-                    target="_blank"
-                    aria-label='linkedin'
-                >
-                    <LinkedInIcon />
-                </LinkIcon>
-                )}
-            </>
-            )}
-        </AboutContact>
-        </Container>
-        <Img src = {photo}/>
-    </Wrapper>
-)
+                {role && <Role>A {role}.</Role>}
+                <Desc>{description && description.split('\n').map(str => <p key={uniqid()} ><br/>{str}</p>) }</Desc>
+
+                <AboutContact className='about__contact center'>
+                    {resume && (
+                    <Resume href={resume} target="_blank">
+                        <ResumeLink>
+                            Resume
+                        </ResumeLink>
+                    </Resume>
+                    )}
+
+                    {social && (
+                    <>
+                        {social.github && (
+                        <LinkIcon
+                            href={social.github}
+                            aria-label='github'
+                            target="_blank"
+                        >
+                            <GitHubIcon />
+                        </LinkIcon>
+                        )}
+
+                        {social.linkedin && (
+                        <LinkIcon
+                            href={social.linkedin}
+                            target="_blank"
+                            aria-label='linkedin'
+                        >
+                            <LinkedInIcon />
+                        </LinkIcon>
+                        )}
+                    </>
+                    )}
+                </AboutContact>
+            </Container>
+            <ImageContainer className="atropos">
+                <Img src={photo}/>
+            </ImageContainer>
+        </Wrapper>
+    )
 }
 
 
@@ -102,11 +105,11 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-    margin-right: 0.8em;
+    /* margin-right: 0.8em; */
     display: flex;
     align-items: center;
     justify-content:center;
-    height:100%;
+    height:600px;
     justify-content:center;
     @media (max-width: 1000px) {
         flex-direction:column-reverse;
@@ -114,15 +117,17 @@ const Wrapper = styled.div`
     }
 `;
 
-const Img = styled.img`
-margin: 2em;
-width: 27em;
-box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-animation: ${ImgslideIn} 1s ease-in-out both;
+const ImageContainer = styled(Atropos)`
+    width: 500px;
+    margin:25px;
+    @media (max-width: 1000px) {
+        width: 80%;
+}
+`;
 
-@media (max-width: 1000px) {
-    width: 80%;
-    }
+const Img = styled.img`
+width: 100%;
+animation: ${ImgslideIn} 1s ease-in-out both;
 `;
 
 const Name = styled.h1`
@@ -133,12 +138,12 @@ const Name = styled.h1`
 `;
 
 const Role = styled.h2`
-    margin-top: 1.2em;
+    margin-top: 10px;
 `;
 
 const Desc = styled.div`
-    margin-top:1em;
-    font-size: 1.3em;
+    padding: 5px;
+    font-size: 1.2em;
     max-width: 600px;
     text-align: justify;
     text-justify: inter-word;
