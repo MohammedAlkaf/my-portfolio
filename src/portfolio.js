@@ -52,7 +52,7 @@ const header = {
         add procusts to cart and check out and process pyament via Stripe.
         `,
       stack: ['ReactJS', 'JavaScript', 'NodeJS', 'MongoDB', 'ExpressJS', "JWT","Stripe","Redux","Styled-components"],
-      sourceCode: 'https://github.com/MohammedAlkaf/SportsPickApp',
+      sourceCode: 'https://github.com/MohammedAlkaf/Haya-wear-ecommerce-website',
       livePreview: 'https://hayawear.netlify.app/',
     },
     {
