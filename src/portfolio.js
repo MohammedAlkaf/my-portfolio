@@ -10,7 +10,7 @@ const header = {
     name: 'Mohammed Al-Kaf',
     role: 'Junior Full Stack Developer',
     description:
-      `I’ve always sought out new opportunities and challenges that are meaningful to me. I am an electrical engineer and I started my coding journey using C++ as my first programming language. I found my passion in coding where creative ideas come into life.
+      `I’ve always sought out new opportunities and challenges that are meaningful to me. I am a full-stack web developer with a bachelor's degree in Electrical Engineering and a diploma in Full-Stack Development. I started my coding journey using C++ as my first programming language. I found my passion in coding where creative ideas come into life.
       As a web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at a high growth company.`,
     resume: 'https://documentcloud.adobe.com/link/track?uri=urn:aaid:scds:US:ef860706-0de9-4d1e-a49f-480563a6a41f',
     social: {
