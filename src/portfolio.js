@@ -43,6 +43,19 @@ const header = {
       // livePreview: 'https://github.com/MohammedAlkaf/SportsPickApp',
     },
     {
+      name: 'Haya E-Commerce Website',
+      photo:[
+        'https://i.ibb.co/cFdRQv9/iphone-7-minimal-mockup-free-preview-1.png'
+      ],
+      description:
+        `(Work on Progress) Haya is an MERN stack e-commerece website for shopping with a responsive design for all devices. The user can log in/sign up, check the products available at the store, 
+        add procusts to cart and check out and process pyament via Stripe.
+        `,
+      stack: ['ReactJS', 'JavaScript', 'NodeJS', 'MongoDB', 'ExpressJS', "JWT","Stripe","Redux","Styled-components"],
+      sourceCode: 'https://github.com/MohammedAlkaf/SportsPickApp',
+      livePreview: 'https://hayawear.netlify.app/',
+    },
+    {
       name: 'ChatRoom+ App',
       photo:[
         'https://i.ibb.co/gtPMX34/iphone-7-minimal-mockup-free-preview-1.png',

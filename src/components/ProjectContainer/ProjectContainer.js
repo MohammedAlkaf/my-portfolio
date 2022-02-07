@@ -45,6 +45,7 @@ const ProjectContainer = ({ project }) => {
         <GitHubLink
           href={project.sourceCode}
           aria-label='source code'
+          target='_blank'
         >
           <GitHubIcon />
         </GitHubLink>
@@ -54,6 +55,7 @@ const ProjectContainer = ({ project }) => {
         <ProjectLink
           href={project.livePreview}
           aria-label='live preview'
+          target='_blank'
         >
           <LaunchIcon />
         </ProjectLink>

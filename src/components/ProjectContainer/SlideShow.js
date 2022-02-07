@@ -18,14 +18,18 @@ const SlideShow = ({ slideImages }) => {
     return (
         <Wrapper>
             <Slider>
-                <LeftArrow onClick={() => previuosSlide()}>
-                    <ArrowBackIosTwoToneIcon />
-                </LeftArrow>
-                <RightArrow onClick={() => nextSlide()}>
-                    <ArrowForwardIosTwoToneIcon />
-                </RightArrow>
+              { slideImages.length !== 1 &&
+                <>
+                  <LeftArrow onClick={() => previuosSlide()}>
+                      <ArrowBackIosTwoToneIcon />
+                  </LeftArrow>
+                  <RightArrow onClick={() => nextSlide()}>
+                      <ArrowForwardIosTwoToneIcon />
+                  </RightArrow>
+                </>
+              }
                 <ImgContainer current = {current}>
-                  {slideImages.map((slide, index) => {
+                  {slideImages.map((slide) => {
                       return (
                         <Img src={slide} alt="project image" key={uniqid()} />
                       );
