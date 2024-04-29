@@ -9,7 +9,6 @@ import { BtnOutline, Link } from '../../styles/ReusableStyles';
 import Atropos from 'atropos/react';
 import "atropos/atropos.css";
 
-
 const About = ({aboutRef}) => {
     const { name, role, description, resume, social, photo } = about;
 

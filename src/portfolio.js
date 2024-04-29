@@ -180,9 +180,12 @@ const skills = [
   "HTML",
   "CSS",
   "JavaScript",
-  "React",
+  'TypeScript',
+  'AWS',
+  "ReactJS",
+  'NextJS',
   "NodeJS",
-  "Styled-components",
+  "Microservices",
   "C++",
   "Material UI",
   "Git",
@@ -192,7 +195,9 @@ const skills = [
   "Jest",
   "SQL",
   "NoSQL",
-  "FeathersJS"
+  "FeathersJS",
+  'PostgreSQL',
+  'ORMS',
 ];
 
 const contact = {
